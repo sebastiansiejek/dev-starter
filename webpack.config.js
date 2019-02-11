@@ -10,7 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   devtool: 'source-map',
   entry: {
-    bundle: ['babel-polyfill', './src/index.js'],
+    bundle: ['babel-polyfill', './public/index.js'],
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -109,15 +109,15 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'src/index.html',
+      template: 'public/index.html',
       hash: true,
     }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, 'public'),
     compress: true,
-    stats: 'errors-only',
-    open: true,
+    stats: 'errors-only'
   },
 };
 
