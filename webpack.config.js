@@ -10,7 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   devtool: 'source-map',
   entry: {
-    bundle: ['babel-polyfill', './src/index.js'],
+    bundle: './src/index.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
